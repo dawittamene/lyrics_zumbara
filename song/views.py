@@ -1,8 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse,redirect
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     return render(request, 'song/main.html')
@@ -24,7 +24,7 @@ def signup(request):
         else:
             my_user=User.objects.create_user(uname,email,pass1)
             my_user.save()
-            return redirect('login')
+            return redirect('loginpage')
     return render(request, 'song/signup.html')
 def loginpage(request):
     
@@ -34,10 +34,10 @@ def loginpage(request):
         user=authenticate(request,username=username,password=pass1)
         if user is not None:
             login(request,user)
-            return redirect('home')
+            return redirect('index')
         else:
             return HttpResponse ("Username or Password is incorrect!!!")
     return render(request, 'song/login.html')
-def LogoutPage(request):
+def logoutPage(request):
     logout(request)
-    return redirect('login')
+    return redirect('loginpage')

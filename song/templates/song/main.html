@@ -32,9 +32,9 @@
 
       <div class="form-inline my-2 my-lg-0">
 		{% if request.user.is_authenticated %}
-        	<a href="#"class="btn btn-warning">logout</a>
+        	<a href="{% url 'logoutPage' %}"class="btn btn-warning">logout</a>
 		{% else %}
-			<a href="#"class="btn btn-warning">login</a>
+			<a href="{% url 'loginpage' %}"class="btn btn-warning">login</a>
 		{% endif %}
         
         

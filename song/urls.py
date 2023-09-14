@@ -7,5 +7,5 @@ urlpatterns = [
     path('video/', views.video, name="video"),
     path('signup/', views.signup, name="signup"),
     path('loginpage/', views.loginpage, name="loginpage"),
-    path('LogoutPage/', views.LogoutPage, name="LogoutPage"),
+    path('logoutPage/', views.logoutPage, name="logoutPage"),
 ]
