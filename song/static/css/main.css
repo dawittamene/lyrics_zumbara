@@ -113,11 +113,8 @@ span{
 
 
 
-
-#pic{
-    transition: 1s;
-
-}
-#pic:hover{
-    transform: scale(1.1);
+.logo a, img{
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
 }
