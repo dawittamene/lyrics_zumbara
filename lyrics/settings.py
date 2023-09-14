@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'lyrics.urls'
 
-TEMPLATES = [
+TEMPLATES = [ 
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
