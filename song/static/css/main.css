@@ -118,3 +118,11 @@ span{
     margin-right: 10px;
     border-radius: 50%;
 }
+
+
+#head {
+	
+	display: inline-flex;
+	float: right;
+	
+}
