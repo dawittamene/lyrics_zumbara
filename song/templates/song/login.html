@@ -18,6 +18,11 @@
         <div class="shape"></div>
     </div>
     <form method="POST">
+        {% for x in messages %}
+
+        <p style="background-color: red;">{{x}}</p>
+
+        {% endfor %}
         <h3>Login Here</h3>
         {% csrf_token %} 
         <label for="username">Username</label>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse,redirect
-
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -29,6 +29,7 @@ def signup(request):
         else:
             my_user=User.objects.create_user(uname,email,pass1)
             my_user.save()
+            messages.success(request, "account was created successfully!")
             return redirect('loginpage')
     return render(request, 'song/signup.html')
 def loginpage(request):
@@ -41,7 +42,7 @@ def loginpage(request):
             login(request,user)
             return redirect('index')
         else:
-            return HttpResponse ("Username or Password is incorrect!!!")
+           messages.info(request, "username or password is incorrect")
     return render(request, 'song/login.html')
 def logoutPage(request):
     logout(request)
