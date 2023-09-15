@@ -2,13 +2,18 @@ from django.shortcuts import render, HttpResponse,redirect
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 
+
+@login_required(login_url="loginpage")
 def index(request):
     return render(request, 'song/main.html')
-
+@login_required(login_url="loginpage")
 def pictures(request):
     return render(request, 'song/pictures.html')
+
+@login_required(login_url="loginpage")
 def video(request):
     return render(request,'song/video.html')
 
